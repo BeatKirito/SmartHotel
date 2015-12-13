@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>创建系统用户</title>
+</head>
+<body>
+	<form action="SUserRegister" method="post">
+		<span>用户名：</span>
+		<input type="text" name="userName" />
+		<span>昵   称：</span>
+		<input type="text" name="name" />
+		<span>职   务：</span>
+		<select name="userType" >
+			<option value="1" >前台人员</option>
+			<option value="2" >客房清洁人员</option>
+			<option value="3" >客房服务生</option>
+			<option value="4" >餐饮设施服务人员</option>
+			<option value="5" >客房设施维修人员</option>
+		</select>
+		<span>密   码：</span>
+		<input type="password" name="password" />
+		<span>密码确认：</span>
+		<input type="password" name="comPassowrd" />
+		<input type="submit" value="提交并创建" />  
+	</form>
+</body>
+</html>

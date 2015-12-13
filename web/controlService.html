@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="CSS/controlService.css" rel="stylesheet">
+</head>
+<body>
+	<div id="content">
+		<h2>在线调节</h2>
+		<div class="func">
+			<div>
+				<h3 id="baseFunc">灯光调节</h3>
+				<div id="baseList" class="functionList">
+						<input type="submit" value="大厅开关">
+						<input type="submit" value="厕所开关">
+						<input type="submit" value="卧室开关">
+				</div>
+			</div>
+		</div>
+		<div class="func">
+			<div>
+				<h3 id="baseFunc">空调调节</h3>
+				<div id="baseList" class="functionList">
+						<input type="submit" value="风速↑">
+						<input type="submit" value="风速↑">
+						<input type="submit" value="温度↑">
+						<input type="submit" value="温度↓">
+						<input type="submit" value="模式↓">
+						<input type="submit" value="模式↓">
+				</div>
+			</div>
+		</div>
+		<div class="func">
+			<div>
+				<h3 id="baseFunc">DVD调节</h3>
+				<div id="baseList" class="functionList">
+						<input type="submit" value="风速↑">
+						<input type="submit" value="风速↑">
+						<input type="submit" value="温度↑">
+						<input type="submit" value="温度↓">
+						<input type="submit" value="模式↓">
+						<input type="submit" value="模式↓">
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var baseFunc = document.getElementById("baseFunc");
+		if(baseFunc){
+			baseFunc.onclick = function(){
+				this.style.color="#000";
+				this.style.backgroundColor="rgba(255,255,255,0.5)";
+				var otherFunc = document.getElementById("otherFunc");
+				otherFunc.style.transition = "all .5s ease-in-out";
+				otherFunc.style.color="#888";
+				otherFunc.style.backgroundColor="transparent";
+				document.getElementById("baseList").style.display="block";
+				document.getElementById("otherList").style.display="none";
+			}
+		}
+
+		var otherFunc = document.getElementById("otherFunc");
+		if(otherFunc){
+			otherFunc.onclick = function(){
+				this.style.color="#000";
+				this.style.backgroundColor="rgba(255,255,255,0.5)";
+				var baseFunc = document.getElementById("baseFunc");
+				baseFunc.style.transition = "all .5s ease-in-out";
+				baseFunc.style.color="#888";
+				baseFunc.style.backgroundColor="transparent";
+				document.getElementById("baseList").style.display="none";
+				document.getElementById("otherList").style.display="block";
+			}
+		}
+
+	</script>
+</body>
+</html>

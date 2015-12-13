@@ -1,0 +1,76 @@
+@charset "UTF-8";
+*{
+	margin:0;
+	padding:0;
+	border:0 none;
+	font-size:1em;
+	font-family: "Microsoft Yahei","微软雅黑","宋体",Tahoma,Arial,Helvetica,STHeiti; 
+}
+body{
+	background:url(../images/body_bg.png) 50% 0% #DAD5E1 repeat-x;
+	min-height: 500px;
+}
+h1.header{
+	font-size:1.3em;
+	font-weight: 400;
+	text-align: center;
+	background:#f6f6f6;
+	border-bottom: 0.1em solid #aaa;
+	padding:0.3em 0;
+}
+h1.header img{
+	border-radius: 50%;
+	vertical-align: middle;
+	width:10%;
+	max-height: 100px;
+	max-width: 100px;
+}
+h1.header span{
+	vertical-align: middle;
+}
+
+div.footer{
+	width:100%;
+	background:#F6F6F6;
+	position:fixed;
+	bottom:0;
+	padding:2% 0;
+	border-top: 0.1em solid #aaa;
+}
+div.footer a{
+	display:block;
+	float:left;
+	width:30%;
+	text-align:center;
+	text-decoration: none;
+
+	margin-left:3.3%;
+}
+div.footer a img{
+	width:33%;
+	height:33%;
+	max-height: 100px;
+	max-width: 100px;
+}
+div.footer a span{
+	font-size:0.5em;
+	display: block;
+	color:#000;
+}
+/*公告*/
+div.notice{
+	font-size:0.7em;
+	background:rgba(255,255,255,0.7);
+
+}
+iframe{
+	width:100%;
+	display: block;
+	min-height: 500px;
+	padding-bottom:20%;
+}
+
+#personal,#hotel{
+	text-decoration: none;
+	color:#000;
+}

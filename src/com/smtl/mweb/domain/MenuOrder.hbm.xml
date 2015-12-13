@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.smtl.mweb.domain">
+	<class	name="MenuOrder" table="tb_menu_order">
+		<id	name="orderID" type="integer" column="orderID">
+			<generator class="identity"/>
+		</id>
+		
+		<property name="roomID" column="roomID"
+			type="integer" />
+		<property name="mealTimesID" column="mealTimesID"
+			type="integer" />
+		<property name="orderListID" column="orderListID"
+			type="integer" />
+		<property name="totalPrice" column="totalPrice"
+			type="double" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="CSS/journeyService.css" rel="stylesheet">
+</head>
+<body>
+    <div id="time">
+    	<h2>全球时间<i></i></h2>
+    	<div id="picture"></div>
+    </div>
+    <div id="phone">
+		<h2>常用电话<i></i></h2>
+		<ul>
+			<li><span>匪警电话</span>110</li>
+			<li><span>火警电话</span>119</li>
+			<li><span>广州火车站</span>61357222</li>
+			<li><span>交通事故</span>122</li>
+			<li><span>公安短信报警</span>12110</li>
+			<li><span>水上求救专用</span>12395</li>
+			<li><span>天气预报</span>12121</li>
+			<li><span>红十字会急救台</span>999</li>
+			<li><span>森林火警</span>12119</li>
+			<li><span>报时服务</span>12117</li>
+			<li><span>中国银行</span>95566</li>
+			<li><span>招商银行</span>95555</li>
+			<li><span>建设银行</span>95533</li>
+			<li><span>工商银行</span>95588</li>
+			<li><span>广发银行</span>95508</li>
+		</ul>
+    </div>
+    <div id="weather">
+		<h2><a href="http://uc.weather.com.cn/mweather1d/101320101.shtml">天气查询</a><i></i></h2>
+    </div>
+    <div id="ticket">
+		<h2>机票查询<i></i></h2>
+		<div>
+			<form id="ticketForm" action="FlightTicketCralwer" method="post" >
+				<div>
+					<span>出发城市</span>
+					<input data-o="1" type="text" name="dCity" value="北京" />
+				</div>
+				<div>
+					<span>到达城市</span>
+					<input data-o="2" type="text" name="aCity" value="北京" />
+				</div>
+				<div>
+					<span>出发日期</span>
+					<input type="date" id="dDate" name="dDate"  value="" />
+				</div>
+				<div class="highSelect">
+					<span>人数</span>
+					<input type="number" name="num" min="1" value="1" />
+				</div>
+				<div class="highSelect">
+					<span>乘客类型</span>
+					<select	name="pType">
+						<option value="adu" selected="selected">成人</option>
+						<option value="chi">儿童</option>
+						<option value="bab">婴儿</option>
+					</select>
+				</div>
+				<div class="highSelect">
+					<span>舱位等级</span>
+					<select	name="cType">
+						<option value="y" selected="selected">经济舱</option>
+						<option value="cf">公务舱/头等舱</option>
+					</select>
+				</div>
+				<input class="sub" type="submit" value="提交" />
+				<a href="#" class="highSearchA">更多选项</a>
+			</form>
+			<!-- <img style="width:100%;" src="images/example2.png" /> -->
+		</div>
+    </div>
+    <!-- <div id="rentCar">
+		<h2>一键租车<i></i></h2>
+		<div>
+			<img style="width:100%;" src="images/example3.png" />
+		</div>
+    </div> -->
+    <div id="viewpot">
+		<h2>周围景点<i></i></h2>
+		<ul class="jingdian"> <li> <a title="深圳世界之窗" target="_blank" href="http://shenzhen.cncn.com/jingdian/shijiezhichuang/"><img alt="世界之窗" lazy_src="http://c.cncnimg.cn/037/641/e8b6_s.jpg" src="http://c.cncnimg.cn/037/641/e8b6_s.jpg">世界之窗</a></li><li> <a title="广州长隆欢乐世界" target="_blank" href="http://guangzhou.cncn.com/jingdian/changlonghuanleshijie/"><img alt="长隆欢乐世界" lazy_src="http://c.cncnimg.cn/037/704/75c4_s.jpg" src="http://c.cncnimg.cn/037/704/75c4_s.jpg">长隆欢乐世界</a></li><li> <a title="深圳海上田园" target="_blank" href="http://shenzhen.cncn.com/jingdian/haishangtianyuan/"><img alt="海上田园" lazy_src="http://c.cncnimg.cn/037/054/6e24_s.jpg" src="http://c.cncnimg.cn/037/054/6e24_s.jpg">海上田园</a></li><li> <a title="珠海东澳岛" target="_blank" href="http://zhuhai.cncn.com/jingdian/dongaodao/"><img alt="东澳岛" lazy_src="http://c.cncnimg.cn/038/668/18ae_s.jpg" src="http://c.cncnimg.cn/038/668/18ae_s.jpg">东澳岛</a></li><li> <a title="欢乐谷" target="_blank" href="http://shenzhen.cncn.com/jingdian/huanlegu/"><img alt="欢乐谷" lazy_src="http://c.cncnimg.cn/037/489/fd42_s.jpg" src="http://c.cncnimg.cn/037/489/fd42_s.jpg">欢乐谷</a></li><li> <a title="深圳小梅沙旅游中心" target="_blank" href="http://shenzhen.cncn.com/jingdian/xiaomeisha/"><img alt="小梅沙" lazy_src="http://c.cncnimg.cn/038/108/98a1_s.jpg" src="http://c.cncnimg.cn/038/108/98a1_s.jpg">小梅沙</a></li><li> <a title="深圳东部华侨城" target="_blank" href="http://shenzhen.cncn.com/jingdian/dongbuhuaqiaocheng/"><img alt="东部华侨城" lazy_src="http://c.cncnimg.cn/036/989/6604_s.jpg" src="http://c.cncnimg.cn/036/989/6604_s.jpg">东部华侨城</a></li><li> <a title="韶关丹霞山" target="_blank" href="http://shaoguan.cncn.com/jingdian/danxiashan/"><img alt="丹霞山" lazy_src="http://c.cncnimg.cn/037/112/a1b3_s.jpg" src="http://c.cncnimg.cn/037/112/a1b3_s.jpg">丹霞山</a></li><li> <a title="深圳大梅沙" target="_blank" href="http://shenzhen.cncn.com/jingdian/dameisha/"><img alt="大梅沙" lazy_src="http://c.cncnimg.cn/037/045/53c3_s.jpg" src="http://c.cncnimg.cn/037/045/53c3_s.jpg">大梅沙</a></li><li> <a title="番禺南沙天后宫" target="_blank" href="http://guangzhou.cncn.com/jingdian/nanshatianhougong/"><img alt="南沙天后宫" lazy_src="http://c.cncnimg.cn/037/446/21e3_s.jpg" src="http://c.cncnimg.cn/037/446/21e3_s.jpg">南沙天后宫</a></li> </ul>
+	</div>
+	<div id="newdiv">
+		<h3><i id="returnLast"></i>选择城市</h3>
+		<dl id="hotCity"></dl>
+	</div>
+	<div id="resultList">
+		<h3><i id="returnLast2"></i>查询结果</h3>
+	</div>
+	<script type="text/javascript" src="JS/jquery.min.js"></script>
+    <script type="text/javascript" src="JS/checkHeight.js"></script>
+</body>
+</html>

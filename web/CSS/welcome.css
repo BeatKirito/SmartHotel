@@ -1,0 +1,56 @@
+@charset "UTF-8";
+*{
+	margin:0;
+	padding:0;
+	border:0 none;
+}
+div.welcome{
+	margin:1em auto 0 auto;
+	width:90%;
+}
+div.welcome img{
+	float:right;
+	padding-left: 0.4em;
+	padding-bottom: 0.5em;
+	padding-top: 0.3em;
+}
+div.welcome p {
+	text-indent: 2em;
+}
+div.personal{
+	margin:1em auto 0 auto;
+	width:90%;
+}
+div.personal img{
+	float:left;
+	padding-right: 1em;
+	padding-bottom: 0.5em;
+	padding-top: 0.2em;
+}
+div.personal p{
+	line-height: 1.5em;
+	height: 1.5em;
+}
+div.personal p span{
+	width:3em;
+	display: inline-block;
+}
+div.language{
+	margin-top: 0.3em;
+	clear:both;
+	height:1.5em;
+	line-height: 1.5em;
+}
+div.language label{
+	float:left;
+	margin-right:1em;
+}
+div.language select{
+	background: none repeat scroll 0 0 #fff;
+    border: 1px solid #eee;
+    display: block;
+    font-size: 0.9em;
+    height: 1.67em;
+    margin-bottom: 3%;
+    width: 50%;
+}

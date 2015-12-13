@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.smtl.fweb.damain">
+	<class	name="CusConsult" table="tb_cus_consult">
+		<id	name="consultID" type="integer" column="consultID">
+			<generator class="identity"/>
+		</id>
+		
+		<property name="roomID" column="roomID"
+			type="integer" />
+		<property name="content" column="content"
+			type="text" />
+		<property name="consultTime" column="consultTime"
+			type="timestamp"  />
+		<property name="isReply" column="isReply"
+			type="boolean"  />
+		<property name="reply" column="reply"
+			type="text" />
+		<property name="replyTime" column="replyTime"
+			type="timestamp" />
+	</class>
+</hibernate-mapping>

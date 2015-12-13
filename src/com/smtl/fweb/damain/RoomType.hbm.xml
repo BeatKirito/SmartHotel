@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.smtl.fweb.damain">
+	<class	name="RoomType" table="tb_room_type">
+		<id	name="typeID" type="integer" column="typeID">
+			<generator class="identity"/>
+		</id>
+		
+		<property name="typeName" column="typeName"
+			type="string" />
+		<property name="price" column="price"
+			type="double" length="20" />
+	</class>
+</hibernate-mapping>

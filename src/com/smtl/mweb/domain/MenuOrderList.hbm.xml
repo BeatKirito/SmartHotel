@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.smtl.mweb.domain">
+	<class	name="MenuOrderList" table="tb_menu_order_list">
+		<id	name="listID" type="integer" column="listID">
+			<generator class="identity"/>
+		</id>
+		
+		<property name="menuID" column="menuID"
+			type="integer" />
+		<property name="orderNum" column="orderNum"
+			type="integer" />
+	</class>
+</hibernate-mapping>

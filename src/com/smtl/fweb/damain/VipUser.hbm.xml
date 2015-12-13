@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.smtl.fweb.damain">
+	<class	name="VipUser" table="tb_vipuser">
+		<id	name="userID" type="integer" column="userID">
+			<generator class="identity"/>
+		</id>
+		
+		<property name="account" column="account"
+			type="string" length="20" />
+		<property name="userName" column="userName"
+			type="string" length="20" />
+		<property name="password" column="password"
+			type="string" length="50" />
+		<property name="cardNumber" column="cardNumber"
+			type="string" length="20" />
+		<property name="phoneNumber" column="phoneNumber"
+			type="string" length="15" />
+		<property name="balance" column="balance"
+			type="double" />
+		<property name="registerDate" column="registerDate"
+			type="date" />
+		<property name="lastDate" column="lastDate"
+			type="date" />
+	</class>
+</hibernate-mapping>

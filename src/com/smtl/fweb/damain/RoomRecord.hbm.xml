@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.smtl.fweb.damain">
+	<class	name="RoomRecord" table="tb_room_record">
+		<id	name="recordID" type="integer" column="recordID">
+			<generator class="identity"/>
+		</id>
+		
+		<property name="roomID" column="roomID"
+			type="integer" />
+		<property name="cusName" column="cusName"
+			type="string" length="10" />
+		<property name="cardNumber" column="cardNumber"
+			type="string" length="20" />
+		<property name="phoneNumber" column="phoneNumber"
+			type="string" length="15" />
+		<property name="liveInTime" column="liveInTime"
+			type="timestamp" />
+		<property name="leaveTime" column="leaveTime"
+			type="timestamp" />
+		<property name="baseCost" column="baseCost"
+			type="double"  />
+		<property name="deposit" column="deposit"
+			type="double"  />
+		<property name="initCost" column="initCost"
+			type="double" />
+		<property name="ortherCost" column="ortherCost"
+			type="double" />
+		<property name="returnDeposit" column="returnDeposit"
+			type="double" />
+		<property name="isAvailable" column="isAvailable"
+			type="boolean" />
+	</class>
+</hibernate-mapping>

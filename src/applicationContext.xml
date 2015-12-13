@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 指定Spring配置文件的Schema信息 -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/tx 
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop 
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close"
+		p:driverClass="com.mysql.jdbc.Driver"
+		p:jdbcUrl="jdbc:mysql://beatkirito:3306/db_smtl"
+		p:user="netUser"
+		p:password="123456"
+		p:maxPoolSize="40"
+		p:minPoolSize="1"
+		p:initialPoolSize="1"
+		p:maxIdleTime="20"/>
+		<!-- p:jdbcUrl="jdbc:mysql://localhost:3306/db_smtl"
+		p:user="root"
+		p:password="123456" -->
+
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean"
+		p:dataSource-ref="dataSource">
+		
+		<property name="mappingResources">
+			<list>
+				<!-- 以下用来列出Hibernate映射文件 -->
+				<value>com/smtl/fweb/damain/CusConsult.hbm.xml</value>
+				<value>com/smtl/fweb/damain/CusConsultWN.hbm.xml</value>
+				<value>com/smtl/fweb/damain/Room.hbm.xml</value>
+				<value>com/smtl/fweb/damain/RoomOrder.hbm.xml</value>
+				<value>com/smtl/fweb/damain/RoomOrderWN.hbm.xml</value>
+				<value>com/smtl/fweb/damain/RoomRecord.hbm.xml</value>
+				<value>com/smtl/fweb/damain/RoomRecordWN.hbm.xml</value>
+				<value>com/smtl/fweb/damain/RoomType.hbm.xml</value>
+				<value>com/smtl/fweb/damain/RoomWT.hbm.xml</value>
+				<value>com/smtl/fweb/damain/SUser.hbm.xml</value>
+				<value>com/smtl/fweb/damain/SUserType.hbm.xml</value>
+				<value>com/smtl/fweb/damain/SUserWT.hbm.xml</value>
+				<value>com/smtl/fweb/damain/VipUser.hbm.xml</value>
+				<value>com/smtl/mweb/domain/CusCall.hbm.xml</value>
+				<value>com/smtl/mweb/domain/CusCallWO.hbm.xml</value>
+				<value>com/smtl/mweb/domain/MealTimes.hbm.xml</value>
+				<value>com/smtl/mweb/domain/Menu.hbm.xml</value>
+				<value>com/smtl/mweb/domain/MenuOrder.hbm.xml</value>
+				<value>com/smtl/mweb/domain/MenuOrderList.hbm.xml</value>
+			</list>
+		</property>
+		
+		<property name="hibernateProperties">
+			<value>
+			hibernate.dialect=org.hibernate.dialect.MySQLInnoDBDialect
+			hibernate.hbm2ddl.auto=update
+			hibernate.show_sql=true
+			hibernate.format_sql=true
+			#开启二级缓存
+			hibernate.cache.use_second_level_cache=true
+			#设置二级缓存的提供者
+			hibernate.cache.provider_class=org.hibernate.cache.EhCacheProvider
+			</value>
+		</property>
+	</bean>
+	
+	<!-- DAO层配置 -->
+	<!-- 配置DAO组件的模板 -->
+	<bean id="daoTemplate" abstract="true" lazy-init="true"
+		p:sessionFactory-ref="sessionFactory"/>
+
+	<bean id="sUserDao"
+		class="com.smtl.fweb.dao.impl.SUserDaoImpl" parent="daoTemplate"/>
+
+	<bean id="sUserTypeDao"
+		class="com.smtl.fweb.dao.impl.SUserTypeDaoImpl"
+		parent="daoTemplate"/>
+		
+	<bean id="cusCallDao"
+		class="com.smtl.mweb.dao.impl.CusCallDaoImpl" parent="daoTemplate"/>
+		
+	<bean id="roomDao"
+		class="com.smtl.fweb.dao.impl.RoomDaoImpl" parent="daoTemplate"/>
+		
+	<bean id="roomRecordDao"
+		class="com.smtl.fweb.dao.impl.RoomRecordDaoImpl" parent="daoTemplate"/>
+		
+	<bean id="roomTypeDao"
+		class="com.smtl.fweb.dao.impl.RoomTypeDaoImpl" parent="daoTemplate"/>
+		
+	<bean id="cusComsultDao"
+		class="com.smtl.fweb.dao.impl.CusComsultDaoImpl" parent="daoTemplate"/>
+	
+	
+	<!-- Service层配置（业务逻辑） -->
+	<!-- 为之注入DAO组件 -->
+	<!-- <bean id="managerTemplate" abstract="true" lazy-init="true"
+		p:userDao-ref="userDao"
+		p:codeFileDao-ref="codeFileDao"/> -->
+	<bean id="sUserManage"
+		class="com.smtl.fweb.service.impl.SUserManageImpl" >
+		<property name="sUserDao" ref="sUserDao" />
+	</bean>
+	
+	<bean id="consult"
+		class="com.smtl.fweb.service.impl.ConsultManageImpl" >
+		<property name="cusComsultDao" ref="cusComsultDao" />
+	</bean>
+	
+	<bean id="cusCallManage"
+		class="com.smtl.mweb.service.impl.CusCallManageImpl" >
+		<property name="cusCallDao" ref="cusCallDao" />
+		<property name="sUserDao" ref="sUserDao" />
+	</bean>
+	
+	<bean id="roomManage"
+		class="com.smtl.fweb.service.impl.RoomManageImpl" >
+		<property name="roomDao" ref="roomDao" />
+	</bean>
+	
+	<bean id="roomRecordManage"
+		class="com.smtl.fweb.service.impl.RoomRecordManageImpl" >
+		<property name="roomRecordDao" ref="roomRecordDao" />
+	</bean>
+	
+	<bean id="roomTypeManage"
+		class="com.smtl.fweb.service.impl.RoomTypeManageImpl" >
+		<property name="roomTypeDao" ref="roomTypeDao" />
+	</bean>
+	
+	<bean id="transactionManager" class=
+		"org.springframework.orm.hibernate3.HibernateTransactionManager"
+		p:sessionFactory-ref="sessionFactory"/>
+		
+	<!-- 配置事务增强处理Bean,指定事务管理器 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<!-- 用于配置详细的事务语义 -->
+		<tx:attributes>
+			<!-- 所有以'get'开头的方法是read-only的 -->
+			<tx:method name="get*" read-only="true"/>
+			<!-- 其他方法使用默认的事务设置 -->
+			<tx:method name="*"/>
+		</tx:attributes>
+	</tx:advice>
+	<aop:config>
+		<!-- 配置一个切入点，匹配empManager和mgrManager
+			两个Bean的所有方法的执行 -->
+		<aop:pointcut id="CmsPointcut"
+			expression="bean(sUserManage)"/>
+		<!-- 指定在leePointcut切入点应用txAdvice事务增强处理 -->
+		<aop:advisor advice-ref="txAdvice" 
+			pointcut-ref="CmsPointcut"/>
+	</aop:config>
+	
+</beans>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.smtl.mweb.domain">
+	<class	name="MealTimes" table="tb_meal_times">
+		<id	name="timesID" type="integer" column="timesID">
+			<generator class="identity"/>
+		</id>
+		
+		<property name="timesName" column="timesName"
+			type="string" length="10" />
+		<property name="startTime" column="startTime"
+			type="timestamp" />
+		<property name="endTime" column="endTime"
+			type="timestamp" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.smtl.mweb.domain">
+	<class	name="CusCallWO" table="v_cus_call">
+		<id	name="callID" type="integer" column="callID">
+			<generator class="identity"/>
+		</id>
+		
+		<property name="roomID" column="roomID"
+			type="integer" />
+		<property name="suserTypeID" column="suserTypeID"
+			type="integer" />
+		<property name="acceptedSUserID" column="acceptedSUserID"
+			type="integer" />
+		<property name="state" column="state"
+			type="integer" />
+		<property name="statement" column="statement"
+			type="text" />
+		<property name="callTime" column="callTime"
+			type="timestamp" />
+		<property name="title" column="title"
+			type="string" length="20" />
+		
+		<property name="roomNum" column="roomNum"
+			type="string" length="10"  />
+		<property name="userTypeName" column="userTypeName"
+			type="string" length="10" />
+		<property name="userName" column="userName"
+			type="string" length="20" />
+	</class>
+</hibernate-mapping>

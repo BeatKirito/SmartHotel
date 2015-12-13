@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="CSS/style.css" rel="stylesheet">
+</head>
+<body>
+	<h1 class="header">
+		<a id="personal" href="#"><img src="images/touxiang.jpg" alt="个人头像" /></a>
+		<a id="hotel" href="#"><span>智慧型饭店服务系统</span></a>
+	</h1>
+	<iframe id="iframe" src="welcome.html"></iframe>
+	<div class="footer">
+		<a id="journeyService" onclick="return changeIframe1()" href="#"><img src="images/chuyou.png" /><span>出游服务</span></a>
+		<a id="controlService" onclick="return changeIframe2()" href="#"><img src="images/set.png" /><span>客控系统</span></a>
+		<a id="hotelService" onclick="return changeIframe3()" href="#"><img src="images/chihuo.png" /><span>饭店服务</span></a>
+	</div>
+	<script type="text/javascript">
+		//点击下方导航切换iframe
+		var iframe = document.getElementById("iframe");
+		function changeIframe1(){
+			if(iframe.src !== "journeyService.html")
+				iframe.src = "journeyService.html";
+			return false;
+		}
+		function changeIframe2(){
+			if(iframe.src !== "controlService.html")
+				iframe.src = "controlService.html";
+			iframe.src = "controlService.html";
+			return false;
+		}
+		function changeIframe3(){
+			if(iframe.src !== "hotelService.html")
+				iframe.src = "hotelService.html";
+			iframe.src = "hotelService.html";
+			return false;
+		}
+
+		// 计算页面的实际高度，iframe自适应会用到
+		function calcPageHeight(doc) {
+			var cHeight = Math.max(doc.body.clientHeight, doc.documentElement.clientHeight); //body和html元素的clientHeight高度
+			var sHeight = Math.max(doc.body.scrollHeight, doc.documentElement.scrollHeight); //body和html元素的scrollHeight高度
+			var height  = Math.max(cHeight, sHeight); //取clientHeight和scrollHeight高度的最大值
+			return height;
+		}
+		var ifr = document.getElementById('iframe');
+		ifr.onload = function() {
+		  	var iDoc = ifr.contentDocument || ifr.document;
+		  	var height = calcPageHeight(iDoc);
+		  	ifr.style.height = height + 'px';
+		}
+		//上方导航切换
+		var hotel = document.getElementById('hotel');
+		hotel.onclick = function(){
+			if(iframe.src !== "welcome.html")
+				iframe.src = "welcome.html";
+			return false;
+		}
+		var personal = document.getElementById('personal');
+		personal.onclick = function(){
+			if(iframe.src !== "personal.html")
+				iframe.src = "personal.html";
+			return false;
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+@charset "UTF-8";
+/**
+ * 
+ * @authors Your Name (you@example.org)
+ * @date    2015-07-20 11:18:34
+ * @version $Id$
+ */
+*{
+	margin:0;
+	padding:0;
+	border:0 none;
+	font-size:1em;
+	font-family: "Microsoft Yahei","微软雅黑","宋体",Tahoma,Arial,Helvetica,STHeiti; 
+}
+h2{
+	font-size:0.9em;
+	height:2em;
+	line-height:2em;
+	background:#fff;
+	font-weight: 400;
+	border-bottom:1px solid #eee;
+	border-top:1px solid #eee;
+	padding-left:16%;
+}
+ul,ol{
+	list-style: none;
+}
+div ul{
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+}
+div#hotel h2{
+	background:url(../images/hotel.png) no-repeat #fff 9% 51%;
+	position:relative;
+}
+div#food h2{
+	background:url(../images/canyin.png) no-repeat #fff 9% 51%;
+	position:relative;
+}
+div#sheshi h2{
+	background:url(../images/sheshiIcon.png) no-repeat #fff 9% 50%;
+	position:relative;
+}
+div#findhelp h2{
+	background:url(../images/qiuzhu.png) no-repeat #fff 9% 52%;
+	position:relative;
+}
+div#rentCar h2{
+	background:url(../images/zuche.png) no-repeat #fff 9% 50%;
+	position:relative;
+}
+div#viewpot h2{
+	background:url(../images/jingdian.png) no-repeat #fff 9% 50%;
+	position:relative;
+}
+div#food ul{
+	font-size:0.9em;
+	line-height: 1.5em;
+	padding-left:16%;
+}
+body div div{
+	font-size:0.9em;
+}
+div#food ul li span{
+	width:10em;
+	display: inline-block;
+}
+div#viewpot ul{
+	width:70%;
+	margin:2% auto;
+}
+div#viewpot ul a{
+	display: block;
+	height: 100px;
+	line-height: 100px;
+	text-decoration: none;
+	color:#388BFF;
+
+}
+ul.jingdian img{
+	float: left;
+	margin-right:0.5em;
+}
+i{
+	background:url(../images/up.png) no-repeat #fff;
+	display: inline-block;
+	height:6px;
+	width:10px;
+	position:absolute;
+	right:15%;
+	top:50%;
+	margin-top:-3px;
+
+}
+h2.onlineAsk{
+	border:none;
+	border-left: 0.3em solid #614498;
+	background: transparent;
+    font-size: 1em;
+    font-weight: 100;
+    margin: 5% 0 3% 8%;
+    padding-left: 0.5em;
+    height:1.3em;
+    line-height: 1.3em;
+}
+
+div.negotiation{
+	width:83%;
+	margin:0 auto 5% auto;
+}
+div.negotiation select{
+	width:80%;
+	display: block;
+	height:1.67em;
+	margin-bottom:3%;
+	font-size: 0.9em;
+	border:1px solid #eee;
+	background: #fff;
+}
+div.negotiation textarea{
+	width:98%;
+	display: block;
+	height:5em;
+	padding:0.2em;
+	resize : none;
+	margin-bottom:3%;
+	font-size: 1em;
+}
+div.negotiation input.inPut{
+	width:79%;
+	padding-left:0.2em;
+	height:1.5em;
+	line-height: 1.5em;
+}
+div.negotiation input.submit{
+	display: block;
+	float:right;
+	background:#FFE8A0;
+	font-size: 0.9em;
+	text-align: center;
+	width:18%;
+	height:1.68em;
+	line-height:1.68em;
+}
+
+div.functionList{/*功能菜单列表*/
+	padding-bottom:3%;
+	width:83%;
+	margin:0 auto;
+}
+div.functionList input{
+	height:1.6em;
+	text-align:center;
+	width:30%;
+	margin-left:1.6%;
+	margin-top:3%;
+	background:#FFE8A0;
+}
+
+div#food div{
+	margin:3% auto;
+	width:83%;
+}
+div#food div span{
+	vertical-align: middle;
+}
+div#food div img{
+	vertical-align: middle;
+}
+.foodList{
+	position: relative;
+}
+.foodList span{
+	display: block;
+	position:absolute;
+	font-size:16px;
+	right:0px;
+	top:30px;
+}
+.foodList strong{
+	color:#FE6005;
+	font-size:16px;
+	position:absolute;
+	right:0px;
+	top:60px;
+}
