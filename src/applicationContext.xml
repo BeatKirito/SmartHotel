@@ -71,8 +71,11 @@
 	
 	<!-- DAO层配置 -->
 	<!-- 配置DAO组件的模板 -->
-	<bean id="daoTemplate" abstract="true" lazy-init="true"
-		p:sessionFactory-ref="sessionFactory"/>
+	<bean id="daoTemplate" abstract="true" lazy-init="true" >
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- p:sessionFactory-ref="sessionFactory" -->
 
 	<bean id="sUserDao"
 		class="com.smtl.fweb.dao.impl.SUserDaoImpl" parent="daoTemplate"/>
